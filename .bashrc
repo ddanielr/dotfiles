@@ -65,10 +65,11 @@ alias nuke="docker ps -q -a | xargs docker rm -f"
 
 # Add defined ssh keys
 eval `ssh-agent`
-while IFS= read -r key; do
-    ssh-add ~/.ssh/${key}
-done < "~/.ssh/key_list"
-
+if [[ -f $HOME/.ssh/key_list ]]; then 
+	while IFS= read -r key; do
+	    ssh-add $HOME/.ssh/${key}
+	done < "$HOME/.ssh/key_list"
+fi
 # Pathing setup
 export GPG_TTY=$(tty)
 ## Go Pathing
