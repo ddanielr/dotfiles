@@ -1,5 +1,8 @@
 # Name: .inputrc
 
+# Disable terminal bell
+set bell-style none
+
 # Configure abbreviated search ability
 "\e[A": history-search-backward
 "\e[B": history-search-forward
@@ -7,4 +10,3 @@
 # Configure autocomplete
 set show-all-if-ambiguous on
 set completion-ignore-case on
-
